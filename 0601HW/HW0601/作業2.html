@@ -7,12 +7,20 @@
     <title>Document</title>
 
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "思源黑體";
+        }
+
         footer {
             background-color: rgb(37, 37, 37);
             position: fixed;
             width: 100%;
             bottom: 0;
-            height: 600;
+            height: 40%;
+            flex-wrap: wrap;
+            margin: 0;
 
 
         }
@@ -29,28 +37,40 @@
             font-size: 35px;
             color: white;
             align-items: stretch;
-            font-family: "思源黑體";
+            /* font-family: "思源黑體"; */
+            width: 90%;
+            flex-direction: column;
+
 
         }
-        .address{font-family: 思源黑體;
-        font-style: normal;}
+
+        .address {
+            /* font-family: 思源黑體; */
+            font-style: normal;
+
+        }
 
         .divP {
             font-weight: bold;
-        }
-
-        .topimg {
-            position: absolute;
-            left: 450px;
+       
         }
 
         .topimg img {
-            width: 150px;
+            position: relative;
+            top: 0;
+            width: 200px;
             height: auto;
+            margin-left: 550px;
         }
-      
-        .logo img{width: 90px;
-        height: auto;}
+        .C{position: relative;
+            margin-left: 550px;
+        scroll-padding: ;
+        color: gray;
+        /* font-family: "思源黑體"; */
+        }
+        .C a{margin: 1%;}
+        
+
 
         div {
 
@@ -79,11 +99,57 @@
             margin: 0 20px;
 
 
+        }
 
+
+        .allContent {
+            margin-top: 4%;
+            flex-direction: row;
+            margin-left: 500px;
+        }
+
+        .text {
+            display: flex;
+            margin-top: 20px;
+            position: relative;
+            justify-content: center;
 
 
         }
-        .logo{margin-bottom: px;}
+
+
+        .ul1 a {
+            margin: 2%;
+
+
+        }
+
+        .ul1 img {
+            width: 150px;
+            height: auto;
+        }
+
+        .ul2 a {
+
+            margin: 1px;
+            ;
+        }
+
+        .ul2 img {
+            margin-top: 4.5%;
+            width: 78px;
+            height: auto;
+            margin: 1%;
+        }
+
+        .address {
+            display: flex;
+            margin-top:
+                9%;
+            flex-direction: row;
+            font-size: smaller;
+
+        }
     </style>
 
 
@@ -96,103 +162,111 @@
 
 
 <footer>
-<section>
-    <nav>
-        <div class="topimg"><img src="/HW0601/logo-white-small.png" alt=""></div>
+    <div class="allContent">
 
-        <div>
-            <p class="divP">內容分類</p>
-            <li><a href="">焦點</a></li>
-            <li><a href="">國際</a></li>
-            <li><a href="">財經</a></li>
-            <li><a href="">管理</a></li>
-            <li><a href="">職場</a></li>
-            <li><a href="">共好ESG</a></li>
+        <nav>
+            <div class="topimg"><img src="/0601HW/HW0601/logo-white-small.png" alt=""></div>
 
-        </div>
+            <div class="text">
+                <div>
+                    <p class="divP">內容分類</p>
+                    <li><a href="">焦點</a></li>
+                    <li><a href="">國際</a></li>
+                    <li><a href="">財經</a></li>
+                    <li><a href="">管理</a></li>
+                    <li><a href="">職場</a></li>
+                    <li><a href="">共好ESG</a></li>
 
-
-        <div>
-            <p class="divP">特色頻道</p>
-            <li><a href="">名家專欄</a></li>
-            <li><a href="">特別企劃</a></li>
-            <li><a href="">影音</a></li>
-            <li><a href="">商周財富網</a></li>
-            <li><a href="">良醫健康網</a></li>
+                </div>
 
 
-        </div>
-
-        <div>
-            <p class="divP">商周線上讀</p>
-            <li><a href="">商周封面</a></li>
-            <li><a href="">兩岸國際</a></li>
-            <li><a href="">人物報導</a></li>
-            <li><a href="">職場管理</a></li>
-            <li><a href="">申請七天試閱</a></li>
+                <div>
+                    <p class="divP">特色頻道</p>
+                    <li><a href="">名家專欄</a></li>
+                    <li><a href="">特別企劃</a></li>
+                    <li><a href="">影音</a></li>
+                    <li><a href="">商周財富網</a></li>
+                    <li><a href="">良醫健康網</a></li>
 
 
-        </div>
+                </div>
+
+                <div>
+                    <p class="divP">商周線上讀</p>
+                    <li><a href="">商周封面</a></li>
+                    <li><a href="">兩岸國際</a></li>
+                    <li><a href="">人物報導</a></li>
+                    <li><a href="">職場管理</a></li>
+                    <li><a href="">申請七天試閱</a></li>
 
 
-        <div>
-            <p class="divP">多元服務</p>
-            <li><a href="">訂閱商周</a></li>
-            <li><a href="">客服中心</a></li>
-            <li><a href="">常見問答</a></li>
-            <li><a href="">活動總覽</a></li>
-            <li><a href="">商周Store</a></li>
-            <li><a href="">會員中心</a></li>
-            <li><a href="">序號兌換</a></li>
+                </div>
 
-        </div>
-        <div class="horizontal-line"></div>
-        <div class="logo">
-        <ol>
-            <ul>
 
-                <a href=""><img src="/0601HW/HW0601/logo-white-small.png" alt="" srcset=""></a>
-                <a href=""><img src="/0601HW/HW0601/smart-white.png
+                <div>
+                    <p class="divP">多元服務</p>
+                    <li><a href="">訂閱商周</a></li>
+                    <li><a href="">客服中心</a></li>
+                    <li><a href="">常見問答</a></li>
+                    <li><a href="">活動總覽</a></li>
+                    <li><a href="">商周Store</a></li>
+                    <li><a href="">會員中心</a></li>
+                    <li><a href="">序號兌換</a></li>
+
+                </div>
+                <div class="horizontal-line"></div>
+
+                <div class="logo">
+                    <ol>
+                        <ul class="ul1">
+                            <li>
+                                <a href=""><img src="/0601HW/HW0601/logo-white-small.png" alt="" srcset=""></a>
+                                <a href=""><img src="/0601HW/HW0601/smart-white.png
                         " alt="" srcset=""></a>
-                <a href=""><img src="/0601HW/HW0601/health-white.png" alt="" srcset=""></a>
-                <a href=""><img src="/0601HW/HW0601/alive-white.png" alt="" srcset=""></a>
-                <a href=""><img src="/0601HW/HW0601/bwe-white.png" alt="" srcset=""></a>
-            </ul>
+                                <a href=""><img src="/0601HW/HW0601/health-white.png" alt="" srcset=""></a>
+                                <a href=""><img src="/0601HW/HW0601/alive-white.png" alt="" srcset=""></a>
+                                <a href=""><img src="/0601HW/HW0601/bwe-white.png" alt="" srcset=""></a>
+                            </li>
+                        </ul>
 
-            <Picture>
-                <ul>
 
-                    <a href=""><img src="/0601HW/HW0601/footer-fb-normal.png" alt="" srcset=""></a>
-                    <a href=""><img src="/0601HW/HW0601/footer-line-normal.png" alt="" srcset=""></a>
-                    <a href=""><img src="/0601HW/HW0601/footer-yt-normal.png" alt="" srcset=""></a>
-                    <a href=""><img src="/0601HW/HW0601/footer-web-normal.png" alt="" srcset=""></a>
-                    <a href=""><img src="/0601HW/HW0601/footer-instagram.svg" alt="" srcset=""></a>
-                    <a href=""><img src="/0601HW/HW0601/footer-telegram.svg" alt="" srcset=""></a>
-                    <span class="bottomline"> <a href="">下載app抽好禮</a>
-                        <a href="">訂閱電子報</a></span>
+                        <ul class="ul2">
+                            <li>
+                                <a href=""><img src="/0601HW/HW0601/footer-fb-normal.png" alt="" srcset=""></a>
+                                <a href=""><img src="/0601HW/HW0601/footer-line-normal.png" alt="" srcset=""></a>
+                                <a href=""><img src="/0601HW/HW0601/footer-yt-normal.png" alt="" srcset=""></a>
+                                <a href=""><img src="/0601HW/HW0601/footer-web-normal.png" alt="" srcset=""></a>
+                                <a href=""><img src="/0601HW/HW0601/footer-instagram.svg" alt="" srcset=""></a>
+                                <a href=""><img src="/0601HW/HW0601/footer-telegram.svg" alt="" srcset=""></a>
+                                <span class="bottomline"> <a href="">下載app抽好禮</a>
+                                    <a href="">訂閱電子報</a></span>
+                            </li>
+                        </ul>
 
-                </ul>
-            </Picture>
-        </ol>
-        <address class="address">
-            客戶服務專線:(02) 2510-8888
-            傳真:(02) 2503-6989
-            服務時間:週一至週五09:00~18:00 (例假日除外)
-            
-                    </address>
-    </div>
+                        <address class="address">
 
-        
+                            <div>客戶服務專線 <br>(02) 2510-8888</div>
+                            <div>傳真<br>(02) 2503-6989</div>
+                            <div>服務時間<br>週一至週五09:00~18:00 (例假日除外)</div>
 
-    </nav>
-</section>
+
+                        </address>
+                    </ol>
 
 
 
+                </div>
+            </div>
+            <div class="C">© 2019 Business Weekly a division of Cite Publishing Ltd All Rights Reserved.
+                <a href="">關於商周集團</a>
+                <a href=""> 公告</a>
+                <a href=""> 文章影音授權</a>
+                <a href=""> 廣告合作 </a>
+                <a href=""> 常見問題 </a>
+                <a href=""> 隱私權聲明 </a>
+                <a href=""> 網站導覽 </a>
+
+            </div>
 
 
-
-</footer>
-
-
-</html>
+        </nav>
