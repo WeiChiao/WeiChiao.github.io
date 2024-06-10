@@ -7,6 +7,7 @@
     <title>Document</title>
     <style>
         * {
+
             margin: 0;
             padding: 0;
             font-family: 微軟正黑體;
@@ -45,6 +46,7 @@
         a {
             font-size: 16px;
             color: rgb(23, 40, 82);
+
         }
 
 
@@ -56,6 +58,7 @@
             flex-wrap: wrap;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
             padding-top: 64px;
             padding-left: 108px;
             padding-right: 108px;
@@ -100,16 +103,21 @@
             height: 378.44px;
         }
 
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            position: relative;
+
+        li::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            ;
+            background-color: #0061FF;
+            left: 0;
+            top: 11px;
+            position: absolute;
         }
 
-        li::marker {
-            color: #0061FF;
-        }
+
 
         h2 {
             width: 510px;
@@ -122,11 +130,12 @@
         }
 
         ul {
-            width: 200px;
+            list-style-type: none;
+            width: 240px;
             height: 106.13px;
             display: flex;
-
-
+            margin-bottom: -8px;
+            white-space: nowrap;
 
         }
 
@@ -135,20 +144,22 @@
             height: 27.38px;
             padding-left: 20px;
             margin-bottom: 8px;
+            position: relative;
+
         }
 
         a {
             color: rgb(87, 117, 246);
             text-decoration: underline;
             cursor: pointer;
-            text-underline-offset: 4px; 
+            text-underline-offset: 4px;
         }
 
         .circle {
             display: flex;
 
 
-
+            justify-content: space-between;
             flex-direction: row;
             gap: 20px;
         }
@@ -212,7 +223,7 @@
             <br>
             <div class="circle">
                 <ul>
-                    <li>豐富版型主題與字型搭配</li>
+                    <li> 豐富版型主題與字型搭配</li>
                     <li>RWD響應式網頁設計</li>
                     <li>獨有網址&SSL安全憑證</li>
                 </ul>
@@ -354,36 +365,36 @@
     <section>
         <h3>更多功能與服務</h3>
 
-        <div class="more"><img src="/商線的圖片/asset 0.svg" alt="">
+        <div class="more"><img src="/0606HW/商線的圖片/asset 0.svg" alt="">
             <h5>強大庫存與訂單系統</h5> <br>
             <p>從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
         </div>
 
-        <div class="more"><img src="/商線的圖片/asset 1.svg" alt="">
+        <div class="more"><img src="/0606HW/商線的圖片/asset 1.svg" alt="">
             <h5>即時化商店業績分析</h5><br>
             <p>圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
         </div>
 
 
-        <div class="more"><img src="/商線的圖片/asset 2.svg" alt="">
+        <div class="more"><img src="/0606HW/商線的圖片/asset 2.svg" alt="">
             <h5>多國語系、幣值切換</h5><br>
             <p>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
         </div>
 
 
-        <div class="more"><img src="/商線的圖片/asset 3.svg" alt="">
+        <div class="more"><img src="/0606HW/商線的圖片/asset 3.svg" alt="">
             <h5>專業顧問線上支援</h5><br>
             <p>迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
         </div>
 
 
-        <div class="more"><img src="/商線的圖片/asset 4.svg" alt="">
+        <div class="more"><img src="/0606HW/商線的圖片/asset 4.svg" alt="">
             <h5>廣告行銷加值服務</h5><br>
             <p>由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
         </div>
 
 
-        <div class="more"><img src="/商線的圖片/asset 5.svg" alt="">
+        <div class="more"><img src="/0606HW/商線的圖片/asset 5.svg" alt="">
             <h5>品牌專屬成長社群</h5><br>
             <p>致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
         </div>
