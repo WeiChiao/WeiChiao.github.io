@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport col-4" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossori col-4gin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="/0625/grid_css.css">
+    <style>
+        * {
+
+            margin: 0;
+            padding: 0;
+            font-family: 微軟正黑體;
+            flex-wrap: wrap;
+        }
+
+        .all {
+
+            width: 1300px;
+            margin: 0 auto;
+
+        }
+
+        .single_platform col-4 {
+            background-color: col-4 rgb(247, 248, 249);
+            flex-wrap: wrap;
+            display: flex;
+            height: 280px;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .single_platform col-4 p {
+            width: 1088px;
+            height: 27.38px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: col-4 rgb(23, 40, 82);
+        }
+
+        .content h1 {
+            font-size: 28px;
+            color: col-4 rgb(23, 40, 82);
+        }
+
+        p,
+        ul,
+        a {
+            font-size: 16px;
+            color: col-4 rgb(23, 40, 82);
+
+        }
+
+
+
+        .content {
+
+
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 64px;
+            padding-left: 108px;
+            padding-right: 108px;
+            padding-bottom: 64px;
+
+
+        }
+
+        .orangepeople col-4ngepeople img {
+            width: 478px;
+            height: 455.05px;
+
+        }
+
+        .brownpeople img {
+            width: 478px;
+            height: 394.82px;
+
+        }
+
+        .blackpeople img {
+            width: 478px;
+            height: 436.89px;
+
+        }
+
+        .bluepeople img {
+            width: 478px;
+            height: 461.74px;
+
+        }
+
+        .skincolorp col-4eople img {
+            width: 478px;
+            height: 451.23px;
+
+        }
+
+
+        .text {
+            width: 510px;
+            height: 378.44px;
+        }
+
+
+        li::before col-4 {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            bord col-4er-radius: 50%;
+            ;
+            background-color: col-4 #0061FF;
+            left: 0;
+            top: 11px;
+            position: absolute;
+        }
+
+
+
+        h1 {
+            width: 510px;
+            height: 80.81px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            width: 510px;
+            height: 82.13px;
+            margin-bottom: 24px;
+            line-height: 1.8;
+            letter-spacing: 0.4px;
+        }
+
+        ul {
+            list-style-type: none;
+            width: 240px;
+            height: 106.13px;
+            display: flex;
+            margin-bottom: 25px;
+            white-space: nowrap;
+
+        }
+
+        li {
+            width: 248px;
+            height: 27.38px;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            position: relative;
+
+        }
+
+        a {
+            color: col-4 rgb(87, 117, 246);
+            text-decorangepeople col-4tion: underline;
+            cursor: col-4 pointer;
+            width: 144px;
+            height: 29.38px;
+            text-underline-offset: 7px;
+            text-decorangepeople col-4tion-thickness: 2px;
+
+        }
+
+
+
+
+        .detail_list {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .more col-4 col-md-4 {
+            width: 341.22px;
+            height: 228.13px;
+            margin-top: 58px;
+
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 64px;
+            padding-left: 108.33px;
+            padding-right: 108.33px;
+            background-color: col-4 rgb(247, 248, 249);
+            color: col-4 rgb(23, 40, 82);
+            justify-content: space-between;
+
+        }
+
+
+        section h2 {
+            width: 1088px;
+            height: 40.41px;
+            font-size: 28px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 14px;
+
+        }
+
+        section h3 {
+            width: 341.22px;
+            height: 30px;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+
+
+        }
+
+        section p {
+            width: 341.22px;
+            height: 54.75px;
+            font-size: 16px;
+        }
+
+        .fa-arrow-right {
+            margin-left: 10px;
+        }
+
+        
+        a:hover i {
+            animation: moveArrow 0.3s forw col-4ards;
+        }
+
+        @keyframes moveArrow {
+            to {
+                transform :translateX(4px);
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="all">
+        <div class="single_platform col-4">
+            <h1>單一平台就能助你<br>在全通路輕鬆開店創業 </h1>
+            <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，並能同步管理所有銷售管道，SHOPLINE助你賣得更多、賣得更好!</p>
+        </div>
+        <div class="content">
+            <div class="text col-6">
+                <h1>免寫程式、多款版型 <br>輕鬆打造全能電商網站</h1>
+                <p>不會寫程式也能輕鬆架設品牌電商官網!任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
+
+
+
+                <div class="detail_list">
+                    <ul>
+                        <li> 豐富版型主題與字型搭配</li>
+                        <li>RWD響應式網頁設計</li>
+                        <li>獨有網址&SSL安全憑證</li>
+                    </ul>
+
+                    <ul>
+                        <li>SEO搜尋引擎優化</li>
+                        <li>一頁商店</li>
+                        <li>開放HTML/CSS編輯</li>
+                    </ul>
+                </div>
+                <a href="">看看開店秘技<i class="fa-solid fa-arrow-right"></i></a>
+
+            </div>
+            <div class="orangepeople col-4ngepeople col-6 col-md-6"><img
+                    src="https://shoplineimg.com/59c0fd06080f0690b5000cd1/635b5a9142ad55001075b1c2/550x.webp?source_form col-4at=png"
+                    alt=""></div>
+        </div>
+
+        <div class="content">
+            <div class="brownpeople col-6 col-md-6" ><img
+                    src="https://shoplineimg.com/59c0fd06080f0690b5000cd1/642659acb71fbb001a285f92/500x.webp?source_form col-4at=png"
+                    alt=""></div>
+            <div class="text col-6">
+                <h1>支持海內外電商 <br>金流、物流一次搞定</h1>
+                <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率!</p>
+
+                <div class="detail_list">
+                    <ul>
+                        <li>線上/線下信用卡刷卡</li>
+                        <li>第三方金流/行動支付整合</li>
+                        <li>超商代碼/條碼繳費</li>
+                    </ul>
+
+                    <ul>
+                        <li>多溫層宅配並指定運費</li>
+                        <li>超商/宅配貨到付款</li>
+                        <li>發票開立與串接</li>
+                    </ul>
+                </div>
+
+
+                <a href="">了解更多金物流 <i class="fa-solid fa-arrow-right"></i></a>
+
+            </div>
+
+        </div>
+
+        <div class="content">
+            <div class="text col-6">
+                <h1>刺激下單，創造回購<br>行銷導流、促購模組任你玩</h1>
+                <p>多元優惠活動、會員集客機制、網紅分潤等多種優惠促銷，將電商行銷玩法一網打盡;加上廣告追蹤助你有效優化行銷活動，刺激顧客下單、吸引鐵粉回購!
+                </p>
+
+                <div class="detail_list">
+                    <ul>
+                        <li>推薦活動與分潤</li>
+                        <li>A+B優惠活動</li>
+                        <li>會員分級/點數/購物金</li>
+                    </ul>
+
+                    <ul>
+                        <li>買X享Y優惠</li>
+                        <li>會員推薦獎賞</li>
+                        <li>FB/Google/LINE廣告追蹤</li>
+                    </ul>
+                </div>
+
+
+                <a href="">看更多優惠模組<i class="fa-solid fa-arrow-right"></i></a>
+
+            </div>
+            <div class="blackpeople col-6 col-md-6"><img
+                    src="https://shoplineimg.com/59c0fd06080f0690b5000cd1/635b5a918dfd98001dae1a2c/500x.webp?source_form col-4at=png"
+                    alt="">
+                </div>
+
+
+
+        </div>
+
+        <div class="content">
+            <div class="bluepeople col-6 col-md-6"><img
+                    src="https://shoplineimg.com/59c0fd06080f0690b5000cd1/642659ac8830ec00208c4ac8/500x.webp?source_form col-4at=png"
+                    alt=""></div>
+            <div class="text col-6">
+                <h1>「社群+電商」輕鬆開賣 <br>打造一致的社群購物體驗</h1>
+                <p>善用社群與顧客頻繁互動，讓你透過社群也能輕鬆開賣！從直播 +1 接單、聊天機器人到各管道的訊息整合，我們都為你準備好了，不放過每個銷售環節，打造全方位的社群購物體驗！</p>
+
+                <div class="detail_list">
+                    <ul>
+                        <li>社群直播購物系統</li>
+                        <li>FB/IG貼文+1</li>
+                        <li>自訂聊天機器人腳本</li>
+                    </ul>
+
+                    <ul>
+                        <li>FB/IG/LINE直播+1</li>
+                        <li>FB/IG/LINE對話式購物</li>
+                        <li>訊息整合中心</li>
+                    </ul>
+                </div>
+
+                <a href="">看更多社群購物功能<i class="fa-solid fa-arrow-right"></i></a>
+
+            </div>
+
+        </div>
+
+        <div class="content">
+            <div class="text col-6">
+                <h1>OMO 全通路無縫整併<br>輕鬆管理網店、門市以及其他通路</h1>
+                <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單到會員等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。
+                </p>
+
+                <div class="detail_list">
+                    <ul>
+                        <li>門市 POS 系統</li>
+                        <li>線上線下會員／商品／庫存整合</li>
+                        <li>門市快速集客工具</li>
+                    </ul>
+
+                    <ul>
+                        <li>線上買門市取</li>
+                        <li>進銷庫存／調撥／多店管理</li>
+                        <li>Smart OMO 會員導購工具</li>
+                    </ul>
+                </div>
+
+
+                <a href="">了解更多全通路整合<i class="fa-solid fa-arrow-right"></i></a>
+
+            </div>
+            <div class="skincolorp col-4eople col-6 col-md-6"><img
+                    src="https://shoplineimg.com/59c0fd06080f0690b5000cd1/642659ac34176d00176e375f/500x.webp?source_form col-4at=png"
+                    alt=""></div>
+        </div>
+
+        <section>
+            <h2>更多功能與服務</h2>
+
+            <div class="more col-4 col-md-4"><img src="/0606/0606HW/商線的圖片/asset 0.svg" alt="">
+                <h3>強大庫存與訂單系統</h3>
+                <p>從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
+            </div>
+
+            <div class="more col-4 col-md-4"><img src="/0606/0606HW/商線的圖片/asset 1.svg" alt="">
+                <h3>即時化商店業績分析</h3>
+                <p>圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
+            </div>
+
+
+            <div class="more col-4 col-md-4"><img src="/0606/0606HW/商線的圖片/asset 2.svg" alt="">
+                <h3>多國語系、幣值切換</h3>
+                <p>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
+            </div>
+
+
+            <div class="more col-4 col-md-4"><img src="/0606/0606HW/商線的圖片/asset 3.svg" alt="">
+                <h3>專業顧問線上支援</h3>
+                <p>迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
+            </div>
+
+
+            <div class="more col-4 col-md-4"><img src="/0606/0606HW/商線的圖片/asset 4.svg" alt="">
+                <h3>廣告行銷加值服務</h3>
+                <p>由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
+            </div>
+
+
+            <div class="more col-4 col-md-4"><img src="/0606/0606HW/商線的圖片/asset 5.svg" alt="">
+                <h3>品牌專屬成長社群</h3>
+                <p>致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
+            </div>
+
+
+        </section>
+
+
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

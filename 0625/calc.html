@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+:root{
+--col-margin:10px;
+
+
+
+
+
+}
+
+
+
+
+        .wrap {
+            display: flex;
+            flex-wrap: wrap;
+            /* width: 1000px; */
+            margin: auto;
+            border: 2px solid red;
+        }
+
+        .left {
+            width:calc(25% - var(--col-margin)*2) ;
+            height: 200px;
+            margin: 0 var(--col-margin); 
+            background-color: tomato;
+        }
+
+        .right {
+            width: calc(75% - var(--col-margin)*2);
+            
+            height: 200px;
+            margin: 0 var(--col-margin);
+
+            background-color:tomato;
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>
