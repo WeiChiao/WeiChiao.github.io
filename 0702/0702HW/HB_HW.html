@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+
+
+        .page-header {
+            display: flex;
+            background-image: linear-gradient(to bottom, rgb(111, 185, 224), rgb(189, 137, 236));
+            justify-content: space-between;
+            padding: 10px;
+            position: relative;
+
+        }
+
+        .logo img {
+            vertical-align: top;
+        }
+
+        .hb {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .hb span {
+            background-color: white;
+            height: 2px;
+            width: 80%;
+            margin: 4px auto;
+
+        }
+
+        .the_x {
+
+            display: none;
+
+        }
+
+        @media screen and (min-width:768px) {
+
+            .hb {
+                display: none;
+            }
+
+
+        }
+
+        @media screen and (max-width:767.33px) {
+
+            .main-nav {
+                /* display: none; */
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 90%;
+                background-image: linear-gradient(to bottom, rgb(189, 137, 236), rgb(111, 185, 224));
+                transform: translateX(75%);
+                transition: 1s;
+                opacity: 0;
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            .main-nav>ul {
+                display: flex;
+            }
+
+            .submenu-switch {
+                display: none;
+            }
+
+
+            li:hover>.submenu {
+                display: block;
+                width: fit-content;
+                position: absolute;
+                top: 100%;
+                left: 0;
+
+            }
+
+            li {
+                position: relative;
+            }
+
+        }
+
+        #menu-switch {
+
+            display: none;
+
+        }
+
+        @media screen and (max-width:767.33px) {
+
+            #menu-switch:checked~.page-header .hb {
+                /* background-color: rgb(159, 90, 208); */
+                /* display: none; */
+
+            }
+
+
+            #menu-switch:checked~.page-header .hb span {
+                /* background-color: rgb(255, 255, 255);
+                height: 2px;
+                width: 80%;
+                margin: 4px auto; */
+
+                display: none;
+            }
+
+
+
+
+            #menu-switch:checked~.page-header .hb .the_x {
+                z-index: 1;
+                position: absolute;
+                margin: auto;
+                color: white;
+                display: block;
+            }
+
+
+
+
+
+
+
+            #menu-switch:checked~.page-header .main-nav {
+                /* display: block; */
+                transform: translateX(0%);
+                opacity: 1;
+
+            }
+
+
+
+            .submenu a {
+
+                padding-left: 2em;
+
+            }
+        }
+
+
+        .main-nav a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 14px 1em;
+
+        }
+
+
+
+        @media screen and (max-width:767.33px) {
+
+            .main-nav>ul>li {
+
+                display: flex;
+                flex-wrap: wrap;
+
+            }
+
+            .main-nav>ul>li>a {
+
+                width: 0;
+                flex-grow: 1;
+
+
+            }
+
+            .main-nav>ul>li>.submenu-switch {
+
+                width: 2em;
+                /* background-color: rgba(107, 185, 237, 0.792); */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                scale: 1 -1;
+                /* 讓圖片反過來 */
+                color: rgb(82, 43, 172);
+
+            }
+
+
+            .main-nav li:not(:first-child) {
+                border-top: 1px solid rgb(176, 203, 234);
+
+            }
+
+
+        }
+
+        .submenu {
+            display: none;
+            background-image: linear-gradient(to bottom, rgb(204, 156, 247), white);
+            width: 100%;
+
+
+        }
+
+        .submenu li a {
+            color: rgb(218, 33, 209);
+        }
+
+
+
+
+
+        .submenu-checkbox {
+            display: none;
+        }
+
+
+        @media screen and (max-width:767.33px) {
+            .submenu-checkbox:checked~.submenu-switch {
+                scale: 1 1;
+                color: blueviolet
+                    /* background-color: rgb(69, 191, 231); */
+            }
+
+            .submenu-checkbox:checked~.submenu {
+                display: block;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" id="menu-switch">
+
+    <header class="page-header">
+        <div class="logo">
+            <a href="#"><img src="https://fakeimg.pl/100x40/555555/FFF"></a>
+        </div>
+
+
+
+
+        <label class="hb" for="menu-switch">
+            <i class="the_x fa-solid fa-xmark"></i>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+
+
+
+        <div class="main-nav">
+
+            <ul>
+                <li>
+                    <a href="#">會員專區</a>
+                    <input type="checkbox" name="" class="submenu-checkbox" id="submenu1">
+                    <label for="submenu1" class="submenu-switch">▼</label>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">要</a>
+                            <a href="#">入會</a>
+                            <a href="#">嗎</a>
+                        </li>
+
+                    </ul>
+
+
+
+
+                </li>
+                <li><a href="#">全部商品</a></li>
+                <li><a href="#">成分</a>
+                    <input type="checkbox" name="" class="submenu-checkbox" id="submenu2">
+                    <label for="submenu2" class="submenu-switch">▼</label>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">加了</a>
+                            <a href="#">好</a>
+                            <a href="#">東西</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li><a href="#">關於我們</a>
+                    <input type="checkbox" name="" class="submenu-checkbox" id="submenu3">
+                    <label for="submenu3" class="submenu-switch">▼</label>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">關於</a>
+                            <a href="#">我</a>
+                            <a href="#">們</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li><a href="#">登入</a></li>
+            </ul>
+        </div>
+    </header>
+
+</body>
+
+</html>

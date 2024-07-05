@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+        }
+
+
+
+        .page-header {
+            display: flex;
+            background-color: hsl(151, 61%, 73%);
+            justify-content: space-between;
+            padding: 10px;
+            position: relative;
+
+        }
+
+        .logo img {
+            vertical-align: top;
+        }
+
+        .hb {
+            width: 40px;
+            height: 40px;
+            background-color: skyblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .hb span {
+            background-color: white;
+            height: 2px;
+            width: 80%;
+            margin: 2px auto;
+        }
+
+        @media screen and (min-width:768px) {
+
+            .hb {
+                display: none;
+            }
+
+
+        }
+
+        @media screen and (max-width:767.33px) {
+
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 90%;
+                background-color: rgb(170, 213, 240);
+
+
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            .main-nav>ul {
+                display: flex;
+            }
+
+            .submenu-switch {
+                display: none;
+            }
+
+
+            /* 不能寫在這因為下面有width去覆蓋 */
+            /* .submenu {
+                width: fit-content;
+                position: absolute;
+                top: 100%;
+                left: 0;
+            } */
+
+            li:hover>.submenu {
+                display: block;
+                width: fit-content;
+                position: absolute;
+                top: 100%;
+                left: 0;
+
+            }
+
+            li {
+                position: relative;
+            }
+
+
+
+
+        }
+
+        #menu-switch {
+
+            display: none;
+
+        }
+
+        @media screen and (max-width:767.33px) {
+
+            #menu-switch:checked~.page-header .hb {
+                background-color: blue;
+
+            }
+
+            #menu-switch:checked~.page-header .main-nav {
+                display: block;
+            }
+
+
+
+
+
+            .submenu a {
+
+                padding-left: 2em;
+
+            }
+        }
+
+
+
+
+
+        /* .main-nav {
+            background-color: rgb(235, 208, 241);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 90%;
+            display: none;
+
+        } */
+
+        /* @media screen and (min-width:768px) {
+            .main-nav {
+                background-color: transparent;
+                position: relative;
+                top: auto;
+                left: auto;
+                width: auto;
+                display: block;
+            }
+
+            .main-nav ul {
+                display: flex;
+
+
+            }
+
+        } */
+
+        .main-nav a {
+            text-decoration: none;
+            color: rgb(206, 58, 196);
+            display: block;
+            padding: 6px 1em;
+        }
+
+
+        /* 
+        .main-nav li:not(:first-child) {
+                border-top: none;
+            } */
+
+        @media screen and (max-width:767.33px) {
+
+            .main-nav>ul>li {
+
+                display: flex;
+                flex-wrap: wrap;
+
+            }
+
+            .main-nav>ul>li>a {
+
+                width: 0;
+                flex-grow: 1;
+
+            }
+
+            .main-nav>ul>li>.submenu-switch {
+
+                width: 2em;
+                background-color: rgb(81, 79, 212);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                scale: 1 -1;
+                /* 讓圖片反過來 */
+
+
+
+            }
+
+
+            .main-nav li:not(:first-child) {
+                border-top: 1px solid black;
+
+
+            }
+
+
+        }
+
+        .submenu {
+            display: none;
+            background-color: aliceblue;
+            width: 100%;
+
+        }
+
+
+
+
+
+        .submenu-checkbox {
+            display: none;
+        }
+
+
+        @media screen and (max-width:767.33px) {
+            .submenu-checkbox:checked~.submenu-switch {
+                scale: 1 1;
+                background-color: rgb(69, 191, 231);
+            }
+
+            .submenu-checkbox:checked~.submenu {
+                display: block;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" id="menu-switch">
+
+    <header class="page-header">
+        <div class="logo">
+            <a href="#"><img src="https://fakeimg.pl/100x40/555555/FFF"></a>
+        </div>
+
+
+
+
+        <label class="hb" for="menu-switch">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+
+
+
+        <div class="main-nav">
+
+            <ul>
+                <li>
+                    <a href="#">link 1</a>
+                    <input type="checkbox" name="" class="submenu-checkbox" id="submenu1">
+                    <label for="submenu1" class="submenu-switch">▼</label>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">sublink1</a>
+                            <a href="#">sublink1</a>
+                            <a href="#">sublink1</a>
+                        </li>
+
+                    </ul>
+
+
+
+
+                </li>
+                <li><a href="#">link 2</a></li>
+                <li><a href="#">link 3</a>
+                    <input type="checkbox" name="" class="submenu-checkbox" id="submenu2">
+                    <label for="submenu2" class="submenu-switch">▼</label>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">sublink3</a>
+                            <a href="#">sublink3</a>
+                            <a href="#">sublink3</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li><a href="#">link 4</a>
+                    <input type="checkbox" name="" class="submenu-checkbox" id="submenu3">
+                    <label for="submenu3" class="submenu-switch">▼</label>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#">sublink4</a>
+                            <a href="#">sublink4</a>
+                            <a href="#">sublink4</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li><a href="#">link 5</a></li>
+            </ul>
+        </div>
+    </header>
+
+</body>
+
+</html>
