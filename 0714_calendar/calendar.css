@@ -1,0 +1,382 @@
+body {
+    /* height: 100vh; */
+    display: flex;
+    /* place-items: center; */
+
+    /* justify-content: center; */
+    /* background-image: linear-gradient(to top right,rgba(237, 216, 255, 0.774),rgba(238, 246, 219, 0.507)); */
+
+
+}
+
+
+
+.calendar {
+    /* width: 80%; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(212, 177, 121, 0.726);
+    margin: 30px auto;
+    border-radius: 65px;
+    padding: 30px;
+    /* position: relative; */
+    /* overflow: hidden; */
+
+    border: 3px rgba(240, 219, 219, 0.774) dotted;
+
+    position: relative;
+
+
+}
+
+/* calendar_header*/
+
+
+.calendar_header {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    display: flex;
+    text-align: center;
+    font-size: 30px;
+    /* padding: 10px; */
+    color: white;
+    place-items: center;
+    justify-content: space-between;
+    /* gap:150px; */
+    /* border: 1px red solid; */
+
+}
+
+.calendar_hb {
+    width: 50px;
+    height: 50px;
+    /* background-color: rgba(228, 143, 38, 0.249); */
+    margin-left: 20px;
+    cursor: pointer;
+    /* border: 3px rgba(240, 219, 219, 0.774) dotted; */
+
+
+}
+
+
+.calendar_hb:hover {
+    background-color: rgba(228, 143, 38, 0.249);
+
+    border: 3px rgba(240, 219, 219, 0.774) dotted;
+
+
+}
+
+.add_todolist {
+    margin-right: 30px;
+
+    /* border-radius: 15px; */
+    padding: 3px;
+    /* background-color: rgba(212, 173, 67, 0.311); */
+    color: white;
+    /* border: 3px rgba(240, 219, 219, 0.774) dotted; */
+
+}
+
+.add_todolist i {
+    font-size: 25px;
+}
+
+.add_todolist i:hover {
+    border: 3px rgba(240, 219, 219, 0.774) dotted;
+    border-radius: 15px;
+
+    background-color: rgba(247, 182, 85, 0.452);
+
+}
+
+
+#now {
+    font-size: 14px;
+    /* border: 1px rgba(216, 136, 30, 0.658) solid; */
+    border-radius: 15px;
+    padding: 3px;
+    /* margin-right: 30px; */
+    margin-right: 20px;
+    background-color: rgba(212, 173, 67, 0.311);
+    color: white;
+    border: 3px rgba(240, 219, 219, 0.774) dotted;
+
+
+}
+
+#now:hover {
+    background-color: rgba(204, 126, 23, 0.42);
+
+    cursor: pointer;
+}
+
+
+.calendar_hb span {
+    border: 1px white solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 20%;
+
+
+}
+
+
+.year_and_month {
+    display: flex;
+    /* gap: 200px; */
+
+
+}
+
+.year_div,
+.month_div {
+    align-items: center;
+    display: flex;
+
+}
+
+.year,
+.month {
+
+    cursor: pointer;
+
+
+
+    /* border: 1px red solid; */
+
+}
+
+
+
+
+
+
+.change_year,
+.change_month {
+    width: 50px;
+    /* border-radius: 50%; */
+    cursor: pointer;
+    display: grid;
+    margin: 0 20px;
+
+    /* border: 1px red solid; */
+
+}
+
+
+
+
+/* calendar_body */
+.week {
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    /* margin: 2px; */
+    gap: 2px;
+
+
+
+}
+
+.day {
+
+    /* 配色1 */
+
+    /* display: grid;
+    place-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    background-color: rgba(243, 215, 144, 0.368);
+    margin: 2px;
+    border: 3px rgba(240, 219, 219, 0.774) dotted;
+
+ */
+
+
+    /* 配色2 */
+
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(160, 78, 26, 0.719);
+    background-color: rgba(232, 207, 175, 0.635);
+    margin: 2px;
+
+
+    border: 3px rgba(240, 219, 219, 0.774) dotted;
+
+
+}
+
+.date {
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+
+
+}
+
+
+/* 等長出來來設定日期的名字 */
+
+.choose_date {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    /* margin-left: 8px; */
+    position: relative;
+    cursor: pointer;
+
+    width: 100px;
+    height: 100px;
+
+    /* 圓圓的 */
+    animation: to-top 1s forwards;
+    /* border-radius: 50%; */
+
+
+    margin: 2px;
+    border: rgba(204, 167, 157, 0.486) solid 0.5px;
+
+}
+
+
+
+/* 點下去的動畫 */
+/* .date div:hover span { 
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgb(215, 174, 53);
+} */
+
+
+
+
+.choose_date:hover {
+    transition: 0.000001s ease-in-out;
+
+
+
+    border: 3px rgba(241, 169, 113, 0.774) dotted;
+
+
+
+}
+
+/* 固定住 */
+.date div span {
+    position: absolute;
+}
+
+.date div.today {
+    background-color: rgba(237, 137, 79, 0.317);
+    color: white;
+    /* border-radius: 50%; */
+
+
+
+
+}
+
+.date div.today:hover {
+    border: 3px rgba(231, 227, 225, 0.774) dotted;
+}
+
+.month_list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 13%;
+    border-radius: 14px;
+    left: 59%;
+    font-size: 16px;
+    /* text-align: center; */
+    /* justify-items: center; */
+    color: white;
+    background-color: rgba(238, 138, 72, 0.781);
+    padding: 10px;
+    z-index: 1;
+    transform: scale(0.5);
+    visibility: hidden;
+    cursor: pointer;
+    border: 3px rgba(245, 241, 238, 0.774) dotted;
+
+
+}
+
+
+.month_list .month_div:hover {
+    border-radius: 10px;
+    background-color: coral;
+    border: 3px rgba(255, 255, 255, 0.872) dotted;
+
+}
+
+.month_div {
+    display: flex;
+    justify-content: center;
+    margin: 1px;
+
+
+
+}
+
+.month_list.show {
+
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+
+
+    position: absolute;
+    place-content: center;
+
+
+}
+
+.year:hover,
+.month:hover,
+.change_year:hover,
+.change_month:hover {
+
+
+    cursor: pointer;
+    background-color: rgba(247, 182, 85, 0.452);
+    border-radius: 2px;
+    /* border: 1px rgba(226, 144, 30, 0.797) solid; */
+
+    border: 3px rgba(240, 219, 219, 0.774) dotted;
+
+
+}
+
+
+
+
+/* 待辦事項編輯 */
+
+.color {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 20px;
+}
+
+.modal-title,
+.form-label {
+
+    color: black
+}
