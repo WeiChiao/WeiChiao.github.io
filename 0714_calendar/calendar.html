@@ -31,68 +31,74 @@
             <div class="year_and_month">
                 <!-- 年 -->
                 <div class="year_div">
-                    <div class="pre_year change_year"><i class="fa-sharp fa-solid fa-angle-left"></i></div>
+                    <div class="pre_year change_year" id="pre_year"><i class="fa-sharp fa-solid fa-angle-left"></i></div>
                     <div class="year">2024</div>
-                    <div class="nex_year change_year"><i class="fa-sharp fa-solid fa-angle-right"></i></div>
+                    <div class="nex_year change_year" id="nex_year"><i class="fa-sharp fa-solid fa-angle-right"></i></div>
                 </div>
 
                 <!-- 月 -->
                 <div class="month_div">
-                    <div class="pre_month change_month"><i class="fa-sharp fa-solid fa-angle-left"></i></div>
+                    <div class="pre_month change_month" id="pre_month"><i class="fa-sharp fa-solid fa-angle-left"></i></div>
                     <div class="month">7</div>
                     <div class="month_list"></div>
 
-                    <div class="nex_month change_month"><i class="fa-sharp fa-solid fa-angle-right"></i></div>
+                    <div class="nex_month change_month" id="nex_month"><i class="fa-sharp fa-solid fa-angle-right"></i></div>
                 </div>
             </div>
 
 
             <button id="now">今天</button>
-            <div class="add_todolist btn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+
+            <!-- 新增按鈕 -->
+            <div class=" btn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="add_todolist"><i
                     class="fa-solid fa-plus"></i></div>
-            <!-- 編輯todolist的畫面 -->
+           
+           
+                    <!-- 新增todolist的畫面 -->
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">編輯待辦事項</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h5 class="modal-title" id="staticBackdropLabel">待辦事項</h5>
+                            <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
                         </div>
                         <div class="modal-body">
-                            <!-- 年 -->
+
+
+
+
+                            <!--日期 -->
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="請輸入年份"
-                                    aria-label="Recipient's username" aria-describedby="basic-addon2" id="year_input">
-                                <span class="input-group-text" >年</span>
-                            </div>
-                            <!-- 月 -->
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="請輸入月分"
-                                    aria-label="Recipient's username" aria-describedby="basic-addon2" id="month_input">
-                                <span class="input-group-text" >月</span>
+                                <input type="date" class="form-control" placeholder="請選擇日期"
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2" id="date_input" >
+
                             </div>
 
-                            <!-- 日 -->
+                            <!-- 時間 -->
+
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="請輸入日期"
-                                    aria-label="Recipient's username" aria-describedby="basic-addon2" id="date_input">
-                                <span class="input-group-text" >日</span>
+                                <input type="time" class="form-control" placeholder="請選擇時間"
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2" id="time_input" >
+
                             </div>
+
+
+
 
                             <!-- 待辦事項 -->
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">待辦事項</span>
                                 <input type="text" class="form-control" placeholder="請輸入待辦事項" aria-label="Username"
-                                    aria-describedby="basic-addon1" id="todo_input">
+                                    aria-describedby="basic-addon1" id="todo_input"  >
                             </div>
 
                             <!-- 地點 -->
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">地點</span>
                                 <input type="text" class="form-control" placeholder="請輸入地點" aria-label="Username"
-                                    aria-describedby="basic-addon1" id="place_input">
+                                    aria-describedby="basic-addon1" id="place_input" >
                             </div>
 
                             <!-- 顏色 -->
@@ -100,22 +106,25 @@
 
 
                             <span class="input-group-text color" id="basic-addon1"> <label for="exampleColorInput"
-                                    class="form-label">標記顏色</label>
+                                    class="form-label">標籤色彩</label>
                                 <input type="color" class="form-control form-control-color" id="ColorInput"
-                                    value="#563d7c" title="Choose your color"></span>
+                                    value="#563d7c" title="Choose your color" ></span>
 
 
 
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="add_btn">新增</button>
+                            <button type="button" class="btn " 
+                                id="add_btn">新增</button>
 
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="add_btn">編輯</button>
+                            <button type="button" class="btn " 
+                                id="edit_btn">編輯</button>
 
-                            <button type="button" class="btn btn-primary .save-btn" data-bs-dismiss="modal" >儲存</button>
+                            <button type="button" class="btn " id="save_btn">儲存</button>
 
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="add_btn">刪除</button>
+                            <button type="button" class="btn " 
+                                id="delete_btn" data-bs-dismiss="modal"    >刪除</button>
 
                         </div>
                     </div>
@@ -182,7 +191,8 @@
 
 
     </div>
-
+  
+   
 
 
 
