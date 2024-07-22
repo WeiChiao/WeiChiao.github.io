@@ -19,7 +19,9 @@ body {
     justify-content: center;
  
     /* background-color: rgba(227, 183, 113, 0.614); */
-    background-color: rgba(212, 134, 37, 0.409);
+    /* background-color: rgba(212, 134, 37, 0.409); */
+
+    background-color: rgba(237, 168, 84, 0.409);
 
 
 
@@ -47,7 +49,7 @@ body {
     text-align: center;
     font-size: 30px;
     /* padding: 10px; */
-    color: rgba(178, 28, 28, 0.525);
+    color: rgba(178, 28, 28, 0.753);
     place-items: center;
     justify-content: space-between;
     /* gap:150px; */
@@ -115,9 +117,11 @@ body {
 }
 
 #now:hover {
-    background-color: rgba(173, 142, 109, 0.635);
-
+    background-color: rgba(243, 233, 223, 0.877);
+    color: rgb(239, 147, 66);
     cursor: pointer;
+
+    
 }
 
 
@@ -290,14 +294,15 @@ ul {
 
 
 .choose_date ul::-webkit-scrollbar-thumb {
-    background: #b960295f;
+    background: #ef803a5f;
     border-radius: 10px;
 
 }
 
 .choose_date ul::-webkit-scrollbar-thumb:hover
 {
-background: #e58338;
+background: #e6285577;
+
 
 }
 
@@ -336,7 +341,8 @@ background-color: rgba(249, 245, 233, 0.345);
 }
 
 .date div.today:hover {
-    border: 3px rgba(231, 227, 225, 0.774) dotted;
+    border: 6px rgba(255, 255, 255, 0.774) dotted;
+    transition: 0.000001s ease-in-out;
 }
 
 .month_list {
