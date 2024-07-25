@@ -1,0 +1,42 @@
+:root {
+    --chars: 300;
+  }
+  
+  @keyframes text-reveal {
+    0% {
+      background-size: 0ch;    //使用ch的動畫比較順
+    }
+    100% {
+      background-size: calc(var(--chars) * 1ch);
+    }
+  }
+  
+  body {
+    height: 500vh;
+    font-family: monospace;
+    font-size: 2.5vw;
+    // text-align: justify;
+  
+    .begin_text {
+      position: fixed;
+    
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   top: 50%;
+    //   left: 50%;
+      translate: 50% 50%;
+    //   width: 100%;
+      line-height: 1.5;
+  
+      span {
+        background: #eee linear-gradient(to right, #56ece9 0%, #d45eec 100%) 0 / 0
+          no-repeat;
+        background-clip: text;
+        color: transparent;
+        animation: text-reveal steps(var(--chars)) forwards;
+        animation-timeline: scroll(root);
+        // display: inline-block;
+      }
+    }
+  }

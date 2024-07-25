@@ -1,0 +1,118 @@
+body {
+  height: 100vh;
+  position: relative;
+  background-image: radial-gradient(circle, rgb(64, 26, 204), rgb(220, 63, 207));
+  color: white;
+}
+
+#begin_text {
+  position: relative;
+  top: 30%;
+  left: 30%;
+}
+
+/* :root {
+  --chars: 300;
+}
+
+@keyframes text-reveal {
+  0% {
+    background-size: 0ch;
+  }
+  100% {
+    background-size: calc(var(--chars) * 1ch);
+  }
+}
+
+
+body #begin_text span {
+  background: #eee linear-gradient(to right, #56ece9 0%, #d45eec 100%) 0/0 no-repeat;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  animation: text-reveal steps(var(--chars)) forwards;
+  animation-timeline: scroll(root);
+}# sourceMappingURL=0624SCSS.css.map */
+
+
+
+
+
+
+#begin_text {
+  font-size: 20px;
+  font-weight: bold;
+  animation: float 1s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  90% {
+    transform: translateY(-40px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.container {
+  width:800px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+color: white;}
+
+
+.game
+{
+display: flex;
+flex-direction: column;
+justify-items: center;
+width: 80%;
+font-size: 40px;
+
+}
+#all_btn{
+  
+  display: flex;
+justify-content: center;
+margin-top: 20px;
+  gap: 20px;
+}
+.btn {
+  font-size: 30px;
+  color: white; /* 設置文字顏色為白色 */
+  border: rgb(240, 229, 229) 1px solid;
+}
+
+
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#message {
+  display: flex;
+  animation: breathe 2s ease-in-out infinite;
+  justify-content: center;
+  margin: 40px;
+}
