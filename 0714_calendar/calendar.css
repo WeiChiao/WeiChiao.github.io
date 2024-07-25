@@ -233,7 +233,8 @@ body {
     gap: 2px;
     font-size: 15px;
     font-weight: 600;
-    color: white;
+    /* color: white;    */
+    color: rgba(178, 28, 28, 0.74);
 
 
 }
