@@ -1,0 +1,37 @@
+:root {
+    --chars: 445;
+  }
+  
+  @keyframes text-reveal {
+    0% {
+      background-size: 0ch;
+    }
+    100% {
+      background-size: calc(var(--chars) * 1ch);
+    }
+  }
+  
+  body {
+    height: 500dvh;
+    font-family: monospace;
+    font-size: 2.5vw;
+    // text-align: justify;
+  
+    .text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 75%;
+      line-height: 1.5;
+  
+      span {
+        background: #eee linear-gradient(to right, #37ecba 0%, #72afd3 100%) 0 / 0
+          no-repeat;
+        background-clip: text;
+        color: transparent;
+        animation: text-reveal steps(var(--chars)) forwards;
+        animation-timeline: scroll(root);
+      }
+    }
+  }

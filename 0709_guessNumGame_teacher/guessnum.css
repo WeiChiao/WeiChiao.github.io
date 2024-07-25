@@ -1,0 +1,363 @@
+:root {
+  --chars: 445;
+}
+
+@keyframes text-reveal {
+  0% {
+    background-size: 0ch;
+  }
+
+  100% {
+    background-size: calc(var(--chars) * 1ch);
+  }
+}
+
+#game_intro {
+  height: 500dvh;
+  font-family: monospace;
+  font-size: 2.5vw;
+  background-image: linear-gradient(to top, rgba(16, 98, 222, 0.703), rgb(10, 27, 46));
+}
+
+#game_intro .text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 75%;
+  line-height: 1.5;
+
+}
+
+#game_intro .text .color_change {
+  background: #27363c linear-gradient(to right, #37ecba 0%, #72ccd3 100%) 0/0 no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-reveal steps(var(--chars)) forwards;
+  animation-timeline: scroll(root);
+}
+
+/*# sourceMappingURL=guessnum.css.map */
+
+
+
+
+.intro {
+  position: relative;
+  top: 80px;
+  left: 160px;
+  /* width: 200px; */
+  /* height: 200px; */
+  color: white;
+}
+
+@keyframes pulsate {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.intro {
+  /* animation: blink 1s step-start infinite; */
+  animation: pulsate 1s infinite;
+}
+
+
+#game_intro {
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+@keyframes pulsate {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.go_play {
+  color: rgb(244, 86, 123);
+  font-weight: bold;
+  background-image: linear-gradient(to top, rgb(78, 162, 215), rgb(188, 230, 245));
+  border: 4px outset rgb(117, 183, 237);
+  position: sticky;
+  top: 0px;
+  /* 初始化位置，將由 JavaScript 調整 */
+  opacity: 0;
+  /* 初始狀態為隱藏 */
+  transition: opacity 0.5s ease-in-out;
+  /* 平滑顯示動畫 */
+  margin-top: 20px;
+}
+
+/* 當 .go_play 顯示時添加呼吸動畫 */
+.go_play.show {
+  opacity: 1;
+  animation: pulsate 0.8s infinite;
+  /* 呼吸動畫 */
+}
+
+
+
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #871c1c
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgb(11, 33, 46), rgb(19, 4, 64));
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+
+
+
+
+
+
+
+/* start */
+
+
+#start_btn:link,
+#start_btn:visited,
+
+#restart_btn:link,
+#restart_btn:visited,
+
+#show_answer_btn:link,
+#show_answer_btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: absolute;
+}
+
+#start_btn:hover,
+#restart_btn:hover,
+#show_answer_btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#start_btn:active,
+#restart_btn:active,
+#show_answer_btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#start_btn,
+#restart_btn,
+#show_answer_btn {
+  background-color: #fff;
+  color: #777;
+}
+
+#start_btn::after,
+#restart_btn::after,
+#show_answer_btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+#start_btn::after {
+  background-color: #61ffa5d7;
+}
+
+#restart_btn::after {
+  background-color: #de2828;
+}
+
+#show_answer_btn::after {
+  background-color: #4628de;
+}
+
+
+#start_btn:hover::after,
+#restart_btn:hover::after,
+#show_answer_btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+#start_btn {
+  animation: moveInBottom 0.3s ease-out;
+  animation-fill-mode: backwards;
+}
+
+
+#restart_btn {
+  animation: moveInBottom 0.4s ease-out;
+  animation-fill-mode: backwards;
+}
+
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+
+
+
+#guess_btn {
+  color: #FFF;
+  transition: all 0.5s;
+  position: relative;
+  background-color: #62c3ff;
+}
+
+#guess_btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(11, 67, 220, 0.427);
+  transition: all 0.3s;
+
+}
+
+#guess_btn:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+#guess_btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: scale(1.2, 1.2);
+}
+
+#guess_btn:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+
+#the_game {
+
+  display: flex;
+  align-items: center;
+  height: 100vh;
+
+  background-image: linear-gradient(to top, rgb(81, 144, 221), rgb(106, 234, 174));
+}
+.container{
+
+  margin: 0 20%;
+
+
+}
+.text-center {
+
+
+
+  color: rgb(255, 255, 255);
+}
