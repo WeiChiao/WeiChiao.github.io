@@ -16,11 +16,7 @@ document.querySelector('#add_todolist').onclick = () => {
     document.querySelector('#save_btn').setAttribute('hidden', 'true');
     document.querySelector('#delete_btn').setAttribute('hidden', 'true');
 
-    document.querySelector('#date_input').removeAttribute('disabled');
-    document.querySelector('#time_input').removeAttribute('disabled');
-    document.querySelector('#todo_input').removeAttribute('disabled');
-    document.querySelector('#place_input').removeAttribute('disabled');
-    document.querySelector('#ColorInput').removeAttribute('disabled');
+    input_remove_disabled();
 
 
 }
@@ -127,31 +123,32 @@ const new_calendar = (month, year) => {
                 if (!event.target.closest('li')) {
 
 
-    
+
                     date_input.value = "";
                     time_input.value = "";
                     todo_input.value = "";
                     place_input.value = "";
                     ColorInput.value = "#563d7c"; //預設的
-                
-              
-                
-                
-                      // 可以編輯了
-                      document.querySelector('#date_input').removeAttribute('disabled');
-                      document.querySelector('#time_input').removeAttribute('disabled');
-                      document.querySelector('#todo_input').removeAttribute('disabled');
-                      document.querySelector('#place_input').removeAttribute('disabled');
-                      document.querySelector('#ColorInput').removeAttribute('disabled');
-                  
-                
+
+
+
+
+                    // 可以編輯了
+                    input_remove_disabled();
+                    //   document.querySelector('#date_input').removeAttribute('disabled');
+                    //   document.querySelector('#time_input').removeAttribute('disabled');
+                    //   document.querySelector('#todo_input').removeAttribute('disabled');
+                    //   document.querySelector('#place_input').removeAttribute('disabled');
+                    //   document.querySelector('#ColorInput').removeAttribute('disabled');
+
+
 
 
 
 
                     document.querySelector('#add_btn').removeAttribute('hidden');
-                    document.querySelector('#edit_btn').setAttribute('hidden',true);
-                    document.querySelector('#save_btn').setAttribute('hidden',true);   document.querySelector('#delete_btn').setAttribute('hidden',true);
+                    document.querySelector('#edit_btn').setAttribute('hidden', true);
+                    document.querySelector('#save_btn').setAttribute('hidden', true); document.querySelector('#delete_btn').setAttribute('hidden', true);
                 }
             };
 
@@ -391,11 +388,12 @@ addButton.addEventListener("click", function (event) {
     // console.log("add")
 
     //要放在裡面才不會存到空空的東西!!!!!!!!!!!
-    const date_Content = date_input.value;
-    const time_Content = time_input.value;
-    const todo_Content = todo_input.value.trim();
-    const place_Content = place_input.value.trim();
-    const color_Content = ColorInput.value;
+    const { date_Content, todo_Content, time_Content, place_Content, color_Content } = get_input_value();
+    // const date_Content = date_input.value;
+    // const time_Content = time_input.value;
+    // const todo_Content = todo_input.value.trim();
+    // const place_Content = place_input.value.trim();
+    // const color_Content = ColorInput.value;
 
 
 
@@ -478,6 +476,14 @@ addButton.addEventListener("click", function (event) {
 
 
 
+
+function input_remove_disabled() {
+    document.querySelector('#date_input').removeAttribute('disabled');
+    document.querySelector('#time_input').removeAttribute('disabled');
+    document.querySelector('#todo_input').removeAttribute('disabled');
+    document.querySelector('#place_input').removeAttribute('disabled');
+    document.querySelector('#ColorInput').removeAttribute('disabled');
+}
 
 function saveTodoListToStorage(todoList) {
     const json = JSON.stringify(todoList);
@@ -604,8 +610,9 @@ function renderingTodoList() {
             // console.log(`${item.id} ${id}`)
 
             //可以選擇編輯或刪除
-            document.querySelector('#edit_btn').removeAttribute('hidden');
-            document.querySelector('#delete_btn').removeAttribute('hidden');
+            edit_and_delete_btn();
+            // document.querySelector('#edit_btn').removeAttribute('hidden');
+            // document.querySelector('#delete_btn').removeAttribute('hidden');
 
 
 
@@ -690,11 +697,12 @@ document.querySelector('#edit_btn').onclick = () => {
     document.querySelector('#edit_btn').setAttribute('hidden', 'true');
 
     // 可以編輯了
-    document.querySelector('#date_input').removeAttribute('disabled');
-    document.querySelector('#time_input').removeAttribute('disabled');
-    document.querySelector('#todo_input').removeAttribute('disabled');
-    document.querySelector('#place_input').removeAttribute('disabled');
-    document.querySelector('#ColorInput').removeAttribute('disabled');
+    input_remove_disabled();
+    // document.querySelector('#date_input').removeAttribute('disabled');
+    // document.querySelector('#time_input').removeAttribute('disabled');
+    // document.querySelector('#todo_input').removeAttribute('disabled');
+    // document.querySelector('#place_input').removeAttribute('disabled');
+    // document.querySelector('#ColorInput').removeAttribute('disabled');
 
 
 
@@ -712,39 +720,6 @@ document.querySelector('#edit_btn').onclick = () => {
 
 
 
-//用不到
-
-// document.querySelector('#btn-close').onclick=()=>{
-
-
-
-    
-//     date_input.value = "";
-//     time_input.value = "";
-//     todo_input.value = "";
-//     place_input.value = "";
-//     ColorInput.value = "#563d7c"; //預設的
-
-// // console.log("點點點點")
-
-// document.querySelector('#edit_btn').removeAttribute('hidden');
-//     document.querySelector('#save_btn').setAttribute('hidden', 'true');
-//     document.querySelector('#delete_btn').setAttribute('hidden', 'true');
-
-
-//       // 可以編輯了
-//       document.querySelector('#date_input').removeAttribute('disabled');
-//       document.querySelector('#time_input').removeAttribute('disabled');
-//       document.querySelector('#todo_input').removeAttribute('disabled');
-//       document.querySelector('#place_input').removeAttribute('disabled');
-//       document.querySelector('#ColorInput').removeAttribute('disabled');
-  
-
-
-
-// }
-
-
 
 // 儲存按鈕
 
@@ -752,11 +727,7 @@ function save(id) {
 
 
 
-    const date_Content = date_input.value;
-    const time_Content = time_input.value;
-    const todo_Content = todo_input.value.trim();
-    const place_Content = place_input.value.trim();
-    const color_Content = ColorInput.value;
+    const { date_Content, todo_Content, time_Content, place_Content, color_Content } = get_input_value();
 
 
     // 檢查必填字段
@@ -826,9 +797,9 @@ document.querySelector('#save_btn').onclick = () => {
     document.querySelector('#ColorInput').setAttribute('disabled', true);
 
 
-    document.querySelector('#edit_btn').removeAttribute('hidden');
+    edit_and_delete_btn();
     document.querySelector('#save_btn').setAttribute('hidden', 'true');
-    document.querySelector('#delete_btn').removeAttribute('hidden');
+
 
 
 
@@ -838,6 +809,22 @@ document.querySelector('#save_btn').onclick = () => {
 
 
 };
+
+
+
+function edit_and_delete_btn() {
+    document.querySelector('#edit_btn').removeAttribute('hidden');
+    document.querySelector('#delete_btn').removeAttribute('hidden');
+}
+
+function get_input_value() {
+    const date_Content = date_input.value;
+    const time_Content = time_input.value;
+    const todo_Content = todo_input.value.trim();
+    const place_Content = place_input.value.trim();
+    const color_Content = ColorInput.value;
+    return { date_Content, todo_Content, time_Content, place_Content, color_Content };
+}
 
 
 
