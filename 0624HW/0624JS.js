@@ -1,4 +1,6 @@
-document.querySelector(".container").hidden=true;
+// document.querySelector(".container").hidden=true;
+$('.container').hide();
+
 
 let min = 1;
 let max = 100;
@@ -53,9 +55,13 @@ restart_Btn.addEventListener("click", function () {
 
 
 document.querySelector("body").onclick=()=>{
-    document.querySelector("#begin_text").hidden=true;
+    // document.querySelector("#begin_text").hidden=true;
+    $('#begin_text').hide().fadeOut();
+    $('.container').fadeIn();
+
+    
    
-    document.querySelector(".container").hidden=false;
+    // document.querySelector(".container").hidden=false;
 
 
 }
