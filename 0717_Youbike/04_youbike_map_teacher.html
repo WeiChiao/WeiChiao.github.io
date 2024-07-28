@@ -17,12 +17,22 @@
     #map {
       height: 400px;
     }
+
+    #select {
+      display: flex;
+    }
+    h1{
+display: flex;
+justify-content: center;
+
+    }
+  
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1 class="mb-3">Youbike站點地圖串接練習</h1>
+    <h1 class="mb-3 mt-4"><i class="fa-solid fa-person-biking"></i>Youbike站點地圖串接練習</h1>
     <div class="row">
       <div class="col-6">
         <!-- 放地圖的位置 -->
@@ -36,6 +46,33 @@
             <span class="visually-hidden">Loading...</span>
           </div>
         </div>
+
+        <!-- 表單  如果有需要增添多個縣市的話需改成動態的方式 -->
+        <div id="select">
+          <select class="form-select" id="citySelect" aria-label="Default select example">
+            <option value=""  selected>請選擇縣市</option>
+            <option value="1">臺北市</option>
+          </select>
+
+          <select class="form-select" id="districtSelect" aria-label="Default select example" disabled>
+            <option value="" selected>請選擇行政區</option>
+            <option value="士林區">士林區</option>
+            <option value="大同區">大同區</option>
+            <option value="大安區">大安區</option>
+            <option value="中山區">中山區</option>
+            <option value="中正區">中正區</option>
+            <option value="內湖區">內湖區</option>
+            <option value="文山區">文山區</option>
+            <option value="北投區">北投區</option>
+            <option value="松山區">松山區</option>
+            <option value="信義區">信義區</option>
+            <option value="南港區">南港區</option>
+            <option value="萬華區">萬華區</option>
+
+
+          </select>
+        </div>
+        <!-- 表單 -->
 
         <!-- 站點資訊 -->
         <table id="my_table" class="table table-striped mt-3 text-center d-none">
@@ -63,19 +100,63 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
   <script>
+
+
+
+
     const map = L.map("map");
     const markers = L.markerClusterGroup();
+
+    let allData = [];
+
+
     window.onload = function () {
       initMap();
 
       // 處理fetch抓資料回來並從JSON解讀後的data
       fetchYoubikeData().then((data) => {
+        allData = data;
+
+
         console.log(data);
         clearMarkerGroup();
+
+        document.querySelector("#districtSelect").addEventListener("change", function () {
+          const selectedDistrict = this.value;
+          const filteredData = allData.filter(station => station.sarea === selectedDistrict);
+          clearMarkerGroup();
+          clearTable();
+
+          // 渲染篩選後的資料
+          filteredData.forEach((station) => {
+            // 渲染站點資訊
+            renderingStationInfo(station);
+            // 加上站點標記
+            addMarker(station);
+          });
+
+          // 顯示表並隱藏加載圖示
+          document.querySelector("#my_table").classList.remove("d-none");
+          document.querySelector("#loading_spinner").classList.add("d-none");
+        });
+
+
+        document.querySelector("#citySelect").addEventListener("change", function () {
+          const districtSelect = document.querySelector("#districtSelect");
+          if (this.value === "") {
+            districtSelect.disabled = true;
+            districtSelect.value = "";  // 重設行政區選擇框的值
+          } else {
+            districtSelect.disabled = false;
+          }
+        });
+
+
+
         data.forEach((station) => {
           // 渲染站點資訊
           renderingStationInfo(station);
-          // 加上戰點標記
+          // 加上站點標記
           addMarker(station);
         });
 
@@ -84,6 +165,12 @@
         document.querySelector("#loading_spinner").classList.add("d-none");
       });
     };
+
+
+
+    function clearTable() {
+      document.querySelector(".data_rows").innerHTML = "";
+    }
 
     // 清掉Marker Cluster群組中標記
     function clearMarkerGroup() {
@@ -174,6 +261,13 @@
       return fetch(taipeiYoubikeData).then((res) => res.json());
     }
   </script>
+
+
+
+
+  <!-- try -->
+
+
 </body>
 
 </html>
