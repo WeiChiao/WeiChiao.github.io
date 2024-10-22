@@ -12,141 +12,102 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5GDJCQ5G');</script>
+    <!-- End Google Tag Manager -->
 </head>
 
+
 <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GDJCQ5G"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="calendar">
-
-        <div class="calendar_header"> <!-- 放年跟月還有漢堡 -->
+        <div class="calendar_header">
             <div class="calendar_hb">
                 <span></span>
                 <span></span>
                 <span></span>
-
             </div>
-
-
-
             <div class="year_and_month">
-                <!-- 年 -->
+              
                 <div class="year_div">
-                    <div class="pre_year change_year" id="pre_year"><i class="fa-sharp fa-solid fa-angle-left"></i></div>
+                    <div class="pre_year change_year" id="pre_year"><i class="fa-sharp fa-solid fa-angle-left"></i>
+                    </div>
                     <div class="year">2024</div>
-                    <div class="nex_year change_year" id="nex_year"><i class="fa-sharp fa-solid fa-angle-right"></i></div>
+                    <div class="nex_year change_year" id="nex_year"><i class="fa-sharp fa-solid fa-angle-right"></i>
+                    </div>
                 </div>
-
-                <!-- 月 -->
+               
                 <div class="month_div">
-                    <div class="pre_month change_month" id="pre_month"><i class="fa-sharp fa-solid fa-angle-left"></i></div>
+                    <div class="pre_month change_month" id="pre_month"><i class="fa-sharp fa-solid fa-angle-left"></i>
+                    </div>
                     <div class="month">7</div>
                     <div class="month_list"></div>
-
-                    <div class="nex_month change_month" id="nex_month"><i class="fa-sharp fa-solid fa-angle-right"></i></div>
+                    <div class="nex_month change_month" id="nex_month"><i class="fa-sharp fa-solid fa-angle-right"></i>
+                    </div>
                 </div>
             </div>
-
-
             <button id="now">今天</button>
-
-            <!-- 新增按鈕 -->
+           
             <div class=" btn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="add_todolist"><i
                     class="fa-solid fa-plus"></i></div>
-           
-           
-                    <!-- 新增todolist的畫面 -->
+          
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="staticBackdropLabel">待辦事項</h5>
-                            <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
+                            <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"
+                                id="btn-close"></button>
                         </div>
                         <div class="modal-body">
-
-
-
-
-                            <!--日期 -->
+                           
                             <div class="input-group mb-3">
                                 <input type="date" class="form-control" placeholder="請選擇日期"
-                                    aria-label="Recipient's username" aria-describedby="basic-addon2" id="date_input" >
-
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2" id="date_input">
                             </div>
-
-                            <!-- 時間 -->
-
+                          
                             <div class="input-group mb-3">
                                 <input type="time" class="form-control" placeholder="請選擇時間"
-                                    aria-label="Recipient's username" aria-describedby="basic-addon2" id="time_input" >
-
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2" id="time_input">
                             </div>
-
-
-
-
-                            <!-- 待辦事項 -->
-
+                          
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">待辦事項</span>
                                 <input type="text" class="form-control" placeholder="請輸入待辦事項" aria-label="Username"
-                                    aria-describedby="basic-addon1" id="todo_input"  >
+                                    aria-describedby="basic-addon1" id="todo_input">
                             </div>
-
-                            <!-- 地點 -->
+                           
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">地點</span>
                                 <input type="text" class="form-control" placeholder="請輸入地點" aria-label="Username"
-                                    aria-describedby="basic-addon1" id="place_input" >
+                                    aria-describedby="basic-addon1" id="place_input">
                             </div>
-
-                            <!-- 顏色 -->
-
-
-
+                           
                             <span class="input-group-text color" id="basic-addon1"> <label for="exampleColorInput"
                                     class="form-label">標籤色彩</label>
                                 <input type="color" class="form-control form-control-color" id="ColorInput"
-                                    value="#563d7c" title="Choose your color" ></span>
-
-
-
-
+                                    value="#563d7c" title="Choose your color"></span>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn " 
-                                id="add_btn">新增</button>
-
-                            <button type="button" class="btn " 
-                                id="edit_btn">編輯</button>
-
+                            <button type="button" class="btn " id="add_btn">新增</button>
+                            <button type="button" class="btn " id="edit_btn">編輯</button>
                             <button type="button" class="btn " id="save_btn">儲存</button>
-
-                            <button type="button" class="btn " 
-                                id="delete_btn" data-bs-dismiss="modal"    >刪除</button>
-
+                            <button type="button" class="btn " id="delete_btn" data-bs-dismiss="modal">刪除</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- 到這 -->
-
-
-
-
-
         </div>
-
-
-
-
-
-
-
         <div class="calendar_body">
-
-            <!-- 星期那排 -->
             <div class="week">
                 <div class="day">日</div>
                 <div class="day">一</div>
@@ -156,72 +117,15 @@
                 <div class="day">五</div>
                 <div class="day">六</div>
             </div>
-
-
-
-
-            <!-- 日期們 -->
             <div class="date" id="calendarBody">
-                <!-- 這裡會長出日期 -->
+              
             </div>
-
-
-
-
-
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-  
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
     <script src="/0714_calendar/calendar.js">
-
-
-
-
     </script>
 </body>
 
